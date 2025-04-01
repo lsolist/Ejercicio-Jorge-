@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidado Diario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-custom {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #ff4757;
+        }
+        #mensaje {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <h2 class="mb-4">Tómate un respiro</h2>
+        <button id="mostrarMensaje" class="btn btn-custom btn-lg animate__animated animate__pulse animate__infinite">¿Qué necesito hoy?</button>
+        <div id="mensaje" class="mt-4 animate__animated" style="display: none;"></div>
+    </div>
+
+    <script>
+        const mensajes = [
+            "🌿 Respira profundo y relájate.",
+            "☕ Tómate un momento para disfrutar de una bebida caliente.",
+            "📖 Lee unas páginas de un libro que te guste.",
+            "🌞 Sal a caminar y disfruta del aire fresco.",
+            "🎵 Escucha tu canción favorita.",
+            "💡 Recuerda: eres suficiente tal como eres.",
+            "💆‍♀️ Dedica unos minutos a estirarte y relajar tu cuerpo.",
+            "✨ Haz algo que te haga feliz hoy.",
+            "❤️ Date permiso para descansar sin culpa.",
+            "🎨 Expresa tu creatividad en lo que más te guste."
+        ];
+
+        document.getElementById("mostrarMensaje").addEventListener("click", function() {
+            const mensajeElemento = document.getElementById("mensaje");
+            const mensajeAleatorio = mensajes[Math.floor(Math.random() * mensajes.length)];
+            mensajeElemento.innerHTML = mensajeAleatorio;
+            mensajeElemento.style.display = "block";
+            mensajeElemento.classList.add("animate__fadeIn");
+        });
+    </script>
+</body>
+</html>
